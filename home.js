@@ -11,11 +11,17 @@ const routes = [
 ]
 
 function getHome (request, reply) {
-  reply.view('index', {
-    heroText: config.heroText,
-    backgroundColor: config.backgroundColour,
-    version: config.version
-  })
+  if (config.shouldAlwaysError) {
+    reply().code(500)
+  } else if (config.shouldErrorRandomly && Math.random() >= 0.5) {
+    reply().code(500)
+  } else {
+    reply.view('index', {
+      heroText: config.heroText,
+      backgroundColor: config.backgroundColour,
+      version: config.version
+    })
+  }
 }
 
 
