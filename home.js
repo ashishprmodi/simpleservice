@@ -1,3 +1,4 @@
+const os = require('os')
 const config = require('config')
 
 const routes = [
@@ -19,7 +20,8 @@ function getHome (request, reply) {
     reply.view('index', {
       heroText: config.heroText,
       backgroundColor: config.backgroundColour,
-      version: config.version
+      version: config.version,
+      host: os.hostname()
     })
   }
 }
