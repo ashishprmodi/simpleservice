@@ -1,4 +1,6 @@
 name: simpleservice:1.0.0
+gateways:
+  9050: simpleservice/web
 clusters:
   simpleservice:
     services:
