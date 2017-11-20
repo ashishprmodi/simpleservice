@@ -12,6 +12,14 @@ const routes = [
 ]
 
 function getHome (request, reply) {
+  if (config.responseDelay) {
+    setTimeout(() => { doReply(request, reply) }, Math.floor((Math.random() * config.responseDelay)))
+  } else {
+    return doReply(request, reply)
+  }
+}
+
+function doReply (request, reply) {
   if (config.shouldAlwaysError) {
     reply().code(500)
   } else if (config.shouldErrorRandomly && Math.random() >= 0.5) {
@@ -25,7 +33,6 @@ function getHome (request, reply) {
     })
   }
 }
-
 
 exports.register = function (server, options, next) {
   server.route(routes)

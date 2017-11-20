@@ -10,5 +10,7 @@ config.heroText = process.env.SIMPLE_SERVICE_HERO_TEXT || 'But this is even bett
 config.shouldAlwaysError = process.env.SIMPLE_SERVICE_SHOULD_ALWAYS_ERROR || false
 // throws a 500 randomly
 config.shouldErrorRandomly = process.env.SIMPLE_SERVICE_SHOULD_ERROR_RANDOMLY || false
+// sets a max delay to the response, resulting in a higher response time. Actual delays are a random number up to the max.
+config.responseDelay = process.env.SIMPLE_SERVICE_RESPONSE_DELAY || 0  // milliseconds
 
 module.exports = config
