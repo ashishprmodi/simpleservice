@@ -29,7 +29,8 @@ function doReply (request, reply) {
       heroText: config.heroText,
       backgroundColor: config.backgroundColour,
       version: config.version,
-      host: os.hostname()
+      host: os.hostname(),
+      showButton: config.showButton
     })
   }
 }

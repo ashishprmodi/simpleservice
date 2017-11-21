@@ -14,6 +14,12 @@ npm install
 node index.js
 ```
 
+## Docker build
+
+```bash
+docker build -t magneticio/simpleservice:1.0.0 .
+```
+
 ## Run it in a Docker container
 
 ```bash
