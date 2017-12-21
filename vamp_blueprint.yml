@@ -4,7 +4,7 @@ clusters:
     services:
       breed:
         name: simpleservice:1.0.0
-        deployable: magneticio/simpleservice:1.0.0
+        deployable: ashishprmodi/simpleservice:1.0.0
         ports:
           web: 3000/http
       scale:
